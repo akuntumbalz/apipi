@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "script.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "src/config.json",
+          "src/apiKeys.json",
+          "src/reminder.json",
+          "public/**"
+        ]
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/script.js"
+    }
+  ]
+}
